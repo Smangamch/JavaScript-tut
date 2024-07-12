@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Modify Elements using JavaScript</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('button').forEach(function(button){
+                button.onclick = function(){
+                    document.querySelector('#Element').style.color = button.dataset.color;
+                }
+            })
+        })
+            
+    </script>
+</head>
+
+<body>
+    <h1 id = "Element">Change</h1>
+    <button data-color="red">red</button>
+    <button data-color="Blue">Blue</button>
+    <button data-color="Green">Green</button>
+</body>
+
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Todo-List</title>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){       /*Function will append an element onto the empty list using the script*/
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+                const list = document.createElement('li');
+                list.innerHTML = task; 
+            document.querySelector('#tasks').append(list); 
+
+            if(document.querySelector('#task').value === ''){
+                alert('Input value is null, please input your value!')
+
+                return false;
+            }
+
+       return false;
+    }
+    
+})
+        </script>
+
+    </head>
+    <body>
+        <h1 id= "List">Tasks</h1>
+        <ul id = "tasks"></ul>
+        <form>
+            <input id = "task" placeholder="New Task" type="text">
+            <input type="submit">
+        </form>
+    </body>
+</html>
