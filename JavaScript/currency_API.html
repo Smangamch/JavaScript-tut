@@ -16,9 +16,9 @@
         .then(data => { 
             const rate = data.conversion_rates.GBP;
             const list = document.createElement('li');
-            list.append(rate);
-            document.querySelector('#lis').append(list);                                                                    
-         
+            list.append(document.querySelector('body').innerHTML = `Currency exchange for GBP is: ${rate}`);
+                                                                             
+            
         
         })
     })
