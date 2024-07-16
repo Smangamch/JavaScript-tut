@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency Exchange</title>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        /*Get the exchange rates using the API key*/
+        fetch('https://v6.exchangerate-api.com/v6/9f1b0798d9ec35fa4f1c9532/latest/USD', {
+        }) 
+        
+        /* Convert the exchange data rates into JSON*/
+        .then(Response => Response.json())                                                          
+
+        /*Prints the data */
+        .then(data => { 
+            const rate = data.conversion_rates.GBP;
+            const list = document.createElement('li');
+            list.append(rate);
+            document.querySelector('#lis').append(list);                                                                    
+         
+        
+        })
+    })
+</script>
+
+
+</head>
+
+<body>
+<ul id = "lis"></ul>
+</body>
+</html>
