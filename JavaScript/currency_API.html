@@ -5,6 +5,8 @@
 <script>
     document.addEventListener('DOMContentLoaded', function(){
 
+    document.querySelector('form').onsubmit = () => {
+
         /*Get the exchange rates using the API key*/
         fetch('https://v6.exchangerate-api.com/v6/9f1b0798d9ec35fa4f1c9532/latest/USD', {
         }) 
@@ -14,13 +16,24 @@
 
         /*Prints the data */
         .then(data => { 
-            const rate = data.conversion_rates.GBP;
-            const list = document.createElement('li');
-            list.append(document.querySelector('body').innerHTML = `Currency exchange for GBP is: ${rate}`);
-                                                                             
+
             
+            const currency = document.querySelector('#Currency').value;
+            const rate = data.conversion_rates[currency];
+
+            if(rate !== undefined){
+            document.querySelector('#results').innerHTML = `1 USD is equal to ${rate} ${currency}`;
+            console.log(data);
+            }else{
+                alert('Currency is empty or does not exist, try using a valid currency e.g. "EUR", "GBP", "NZD", "JPY" ')
+            }
+        });
+        return false;
+       
+    }
+
+
         
-        })
     })
 </script>
 
@@ -28,6 +41,13 @@
 </head>
 
 <body>
-<ul id = "lis"></ul>
+
+<form>
+    <input id = "Currency" placeholder="Input Currency" type="text">
+    <input type="submit" value="Convert">
+
+    <div id = "results"></div>
+</form>
+
 </body>
 </html>
