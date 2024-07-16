@@ -17,8 +17,13 @@
         /*Prints the data */
         .then(data => { 
 
+            /*This currency variable will store the currency element which takes in the user input, 
+            and if in any case the user prints in lowercase, then it is automatically going to be converted to uppercase*/
+
+            const currency = document.querySelector('#Currency').value.toUpperCase(); 
             
-            const currency = document.querySelector('#Currency').value;
+            /*Rate is going to parse in the currency onto the dictionary so that it can be checked*/
+
             const rate = data.conversion_rates[currency];
 
             if(rate !== undefined){

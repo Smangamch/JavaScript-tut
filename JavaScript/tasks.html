@@ -5,14 +5,20 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function(){       /*Function will append an element onto the empty list using the script*/
-            document.querySelector('form').onsubmit = () => {
-                const task = document.querySelector('#task').value;
+
+                
+                
+                document.querySelector('form').onsubmit = () => {           /* This function will select the form element and then assign the user input value to task, after that, */
+                const task = document.querySelector('#task').value;         /* it will create an ordered list to store the user information once the submit button is clicked. */
                 const list = document.createElement('li');
                 list.innerHTML = task; 
-            document.querySelector('#tasks').append(list); 
+                document.querySelector('#tasks').append(list); 
+
+                if(document)
 
             if(document.querySelector('#task').value === ''){
                 alert('Input value is null, please input your value!')
+                return null
 
                 return false;
             }
