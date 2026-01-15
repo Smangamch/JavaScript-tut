@@ -7,9 +7,11 @@
          document.addEventListener('DOMContentLoaded', function(){
          document.querySelector('form').onsubmit = function(){
                 const name = document.querySelector('#name').value;
-                alert(`Your name is ${name}! `)
-                
-        }
+                if(name === name.value){
+                    alert(`Your name is ${name}! `)
+                }else{
+                    alert(`Name should not be null!`)
+                }
         })       
 
         function java() { 
@@ -32,4 +34,5 @@
         </form>
 </body>
     
+
 </html>
