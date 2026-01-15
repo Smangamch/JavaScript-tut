@@ -7,7 +7,7 @@
          document.addEventListener('DOMContentLoaded', function(){
          document.querySelector('form').onsubmit = function(){
                 const name = document.querySelector('#name').value;
-                if(name === name.value){
+                if(name === ""){
                     alert(`Your name is ${name}! `)
                 }else{
                     alert(`Name should not be null!`)
@@ -36,3 +36,4 @@
     
 
 </html>
+
